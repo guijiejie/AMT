@@ -1,0 +1,26 @@
+MODEL:
+  TYPE: vit
+  NAME: simmim_finetune
+  DROP_PATH_RATE: 0.1
+  VIT:
+    EMBED_DIM: 768
+    DEPTH: 12
+    NUM_HEADS: 12
+    USE_APE: True
+    USE_RPB: False
+    USE_SHARED_RPB: False
+    USE_MEAN_POOLING: False
+DATA:
+  DATASET: imagenet
+  IMG_SIZE: 224
+TRAIN:
+  EPOCHS: 100
+  WARMUP_EPOCHS: 20
+  BASE_LR: 1.25e-3
+  WARMUP_LR: 2.5e-7
+  MIN_LR: 2.5e-7
+  WEIGHT_DECAY: 0.05
+  LAYER_DECAY: 0.65
+PRINT_FREQ: 100
+SAVE_FREQ: 20
+TAG: simmim_finetune
